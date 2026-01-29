@@ -3,59 +3,98 @@ name: remotion-video-toolkit
 description: Complete toolkit for programmatic video creation with Remotion + React. Covers animations, timing, rendering (CLI/Node.js/Lambda/Cloud Run), captions, 3D, charts, text effects, transitions, and media handling. Use when writing Remotion code, building video generation pipelines, or creating data-driven video templates.
 ---
 
-## When to use
+# 🎬 Remotion Video Toolkit
 
-Use this skill when working with Remotion — writing compositions, animating scenes, rendering videos, or building video generation infrastructure.
+Turn React components into real MP4 videos. This skill gives your AI agent deep knowledge of Remotion — from basic animations to production rendering pipelines.
 
-## How to use
+**29 comprehensive rules** covering every aspect of programmatic video creation.
 
-Read individual rule files for detailed explanations and code examples:
+## 🚀 Use Cases
+
+- **Personalized videos at scale** — Generate unique videos per user (Year in Review, onboarding, reports). Pass JSON data in, get MP4 out.
+- **Automated social content** — Daily/weekly video posts from live data — stats, leaderboards, product updates — zero manual editing.
+- **Dynamic marketing videos** — Customer name, product, pricing baked into video. One template, infinite variations.
+- **Data-driven visualizations** — Animated charts, dashboards, KPI reports as shareable video clips.
+- **E-commerce product videos** — Auto-generate product showcases from images + specs in your database.
+- **TikTok/Reels captions** — Transcribe audio, display word-by-word highlighted captions, export ready for social.
+- **Educational content** — Programmatic explainer videos, animated course materials, certificate generation.
+- **Video rendering APIs** — Expose video generation as an HTTP endpoint for your app or SaaS.
+
+## 📋 Requirements
+
+- **Node.js** 18+
+- **React** 18+ (Remotion uses React as its rendering engine)
+- **Remotion** — `npx create-video@latest` to scaffold a project
+- **FFmpeg** — bundled with `@remotion/renderer` (auto-installed)
+- Optional: AWS account (for Lambda rendering), GCP account (for Cloud Run)
+
+## 🎯 What's Covered
 
 ### Core
-- [rules/compositions.md](rules/compositions.md) - Defining compositions, stills, folders, default props and dynamic metadata
-- [rules/rendering.md](rules/rendering.md) - **Rendering videos** — CLI, Node.js API, Lambda, Cloud Run, Express server patterns
-- [rules/calculate-metadata.md](rules/calculate-metadata.md) - Dynamically set composition duration, dimensions, and props
+- [Compositions](rules/compositions.md) — Define videos, stills, folders, default props, dynamic metadata
+- [Rendering](rules/rendering.md) — **CLI, Node.js API, AWS Lambda, Cloud Run, Express server** patterns
+- [Calculate Metadata](rules/calculate-metadata.md) — Dynamic duration, dimensions, and props at render time
 
 ### Animation & Timing
-- [rules/animations.md](rules/animations.md) - Fundamental animation techniques
-- [rules/timing.md](rules/timing.md) - Interpolation curves — linear, easing, spring animations
-- [rules/sequencing.md](rules/sequencing.md) - Sequencing — delay, trim, limit duration
-- [rules/transitions.md](rules/transitions.md) - Scene transitions
-- [rules/trimming.md](rules/trimming.md) - Trimming — cut beginning or end of animations
+- [Animations](rules/animations.md) — Fade, scale, rotate, slide — all the fundamentals
+- [Timing](rules/timing.md) — Interpolation curves, easing, spring physics
+- [Sequencing](rules/sequencing.md) — Delay, chain, and orchestrate scenes
+- [Transitions](rules/transitions.md) — Smooth scene-to-scene transitions
+- [Trimming](rules/trimming.md) — Cut beginning or end of any animation
 
 ### Text & Typography
-- [rules/text-animations.md](rules/text-animations.md) - Typography and text animation patterns
-- [rules/fonts.md](rules/fonts.md) - Loading Google Fonts and local fonts
-- [rules/measuring-text.md](rules/measuring-text.md) - Measuring text, fitting text to containers, overflow detection
+- [Text Animations](rules/text-animations.md) — Typewriter, word highlight, reveal effects
+- [Fonts](rules/fonts.md) — Google Fonts + local font loading
+- [Measuring Text](rules/measuring-text.md) — Fit text to containers, detect overflow
 
 ### Media
-- [rules/videos.md](rules/videos.md) - Embedding videos — trimming, volume, speed, looping, pitch
-- [rules/audio.md](rules/audio.md) - Audio and sound — importing, trimming, volume, speed, pitch
-- [rules/images.md](rules/images.md) - Embedding images
-- [rules/gifs.md](rules/gifs.md) - GIFs synchronized with timeline
-- [rules/assets.md](rules/assets.md) - Importing images, videos, audio, and fonts
-- [rules/can-decode.md](rules/can-decode.md) - Check video decode compatibility
+- [Videos](rules/videos.md) — Embed, trim, speed, volume, loop, pitch shift
+- [Audio](rules/audio.md) — Import, trim, fade, control volume and speed
+- [Images](rules/images.md) — Embed with the `<Img>` component
+- [GIFs](rules/gifs.md) — Timeline-synced GIF playback
+- [Assets](rules/assets.md) — Import any media into your composition
+- [Decode Check](rules/can-decode.md) — Validate browser compatibility before playback
 
 ### Captions & Subtitles
-- [rules/transcribe-captions.md](rules/transcribe-captions.md) - Transcribing audio to generate captions
-- [rules/display-captions.md](rules/display-captions.md) - TikTok-style captions with word highlighting
-- [rules/import-srt-captions.md](rules/import-srt-captions.md) - Importing .srt subtitle files
+- [Transcribe Captions](rules/transcribe-captions.md) — Audio → captions (Whisper, Deepgram, AssemblyAI)
+- [Display Captions](rules/display-captions.md) — TikTok-style word-by-word highlighting
+- [Import SRT](rules/import-srt-captions.md) — Load existing `.srt` subtitle files
 
 ### Data Visualization
-- [rules/charts.md](rules/charts.md) - Chart and data visualization patterns
+- [Charts](rules/charts.md) — Animated bar charts, line graphs, data-driven visuals
 
 ### Advanced
-- [rules/3d.md](rules/3d.md) - 3D content with Three.js and React Three Fiber
-- [rules/lottie.md](rules/lottie.md) - Lottie animations
-- [rules/tailwind.md](rules/tailwind.md) - TailwindCSS integration
-- [rules/measuring-dom-nodes.md](rules/measuring-dom-nodes.md) - Measuring DOM element dimensions
+- [3D Content](rules/3d.md) — Three.js + React Three Fiber integration
+- [Lottie](rules/lottie.md) — Embed Lottie/After Effects animations
+- [TailwindCSS](rules/tailwind.md) — Style compositions with Tailwind
+- [DOM Measurement](rules/measuring-dom-nodes.md) — Measure element dimensions at render time
 
 ### Media Utilities
-- [rules/get-video-duration.md](rules/get-video-duration.md) - Get video duration in seconds
-- [rules/get-video-dimensions.md](rules/get-video-dimensions.md) - Get video width/height
-- [rules/get-audio-duration.md](rules/get-audio-duration.md) - Get audio duration in seconds
-- [rules/extract-frames.md](rules/extract-frames.md) - Extract frames from videos at specific timestamps
+- [Video Duration](rules/get-video-duration.md) — Get length in seconds
+- [Video Dimensions](rules/get-video-dimensions.md) — Get width/height
+- [Audio Duration](rules/get-audio-duration.md) — Get audio length
+- [Extract Frames](rules/extract-frames.md) — Pull frames at specific timestamps
 
----
+## ⚡ Quick Start
 
-**GitHub:** https://github.com/zone99-llc/remotion-video-toolkit — PRs welcome! Submit new features and improvements.
+```bash
+# Create a new Remotion project
+npx create-video@latest my-video
+
+# Preview in browser
+cd my-video && npm start
+
+# Render to MP4
+npx remotion render src/index.ts MyComposition out/video.mp4
+
+# Pass dynamic data
+npx remotion render src/index.ts MyComposition out.mp4 --props '{"title": "Hello"}'
+```
+
+## 🤝 Contribute
+
+**GitHub:** [github.com/shreefentsar/remotion-video-toolkit](https://github.com/shreefentsar/remotion-video-toolkit)
+
+Missing a feature? Found a better pattern? PRs are welcome — submit new rules, improve existing ones, or add code examples.
+
+Built by [Zone 99](https://zone99.dev) ⚡
